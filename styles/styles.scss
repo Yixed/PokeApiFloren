@@ -1,0 +1,530 @@
+@import "reset";
+@import "var";
+
+body {
+  background-color: #d8d8d8;
+  overflow: hidden;
+  overflow-y: hidden;
+  height: 96vh;
+  width: 100vw;
+  margin: 0 auto;
+  font-family: monospace;
+
+  justify-content: center;
+  display: inline-grid;
+  grid-template-columns: 90vw;
+  grid-template-rows: 1fr 6fr 1fr;
+  grid-gap: 2vh;
+}
+
+//HEADER -----------------------------------------
+#header {
+  background-color: #ca4242;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+#page-title {
+  align-content: center;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 5px;
+  margin-left: 15px;
+}
+
+//MAIN SECTION-----------------------------------
+#mainSection {
+  background-color: #dd6060;
+  height: 100%;
+}
+
+
+
+
+//Team¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+#teamSection {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  
+  background-color: #dd6060;
+  color: #fff;
+}
+
+.pokeCard{
+  background-color: #ca4242;
+  width: 96%;
+  height: auto;
+
+  text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+  margin: 2%;
+  align-content: center;
+  cursor: pointer;
+}
+
+.pokeCardFilled{
+  background-color: #6bf0cf;
+  border: 2px solid #4db2c4;
+  border-radius: 4px;
+  width: 96%;
+  height: 10vh; 
+
+  text-align: center;
+  margin: auto;
+  box-sizing: border-box;
+  margin: 1%;
+  align-content: center;
+  cursor: pointer;
+
+  display: flex; 
+  gap: 2px;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+//Loader¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+#loader {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+@import "https://fonts.googleapis.com/css?family=Reem+Kufi";
+
+@keyframes rotateBall {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotateBall {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}
+#loading {
+  height: 48px;
+  width: 264px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.pokeball {
+  width: 4px;
+  height: 4px;
+  transform-origin: 24px 24px;
+  animation: rotateBall 1.5s infinite forwards;
+  &#normal {
+    box-shadow: 
+      //Row: 1
+      16px 0 0 $blk, 20px 0 0 $blk, 24px 0 0 $blk, 28px 0 0 $blk,
+      //Row: 2
+      8px 4px 0 $blk,
+      12px 4px 0 $blk, 16px 4px 0 $red, 20px 4px 0 $red, 24px 4px 0 $red,
+      28px 4px 0 $red, 32px 4px 0 $blk, 36px 4px 0 $blk,
+      //Row: 3
+      4px 8px 0 $blk,
+      8px 8px 0 $red, 12px 8px 0 $red, 16px 8px 0 $wht, 20px 8px 0 $red,
+      24px 8px 0 $red, 28px 8px 0 $red, 32px 8px 0 $red, 36px 8px 0 $red,
+      40px 8px 0 $blk,
+      //Row: 4
+      4px 12px 0 $blk,
+      8px 12px 0 $red, 12px 12px 0 $wht, 16px 12px 0 $wht, 20px 12px 0 $wht,
+      24px 12px 0 $red, 28px 12px 0 $red, 32px 12px 0 $red, 36px 12px 0 $red,
+      40px 12px 0 $blk,
+      //Row: 5
+      0px 16px 0 $blk,
+      4px 16px 0 $red, 8px 16px 0 $red, 12px 16px 0 $red, 16px 16px 0 $wht,
+      20px 16px 0 $red, 24px 16px 0 $red, 28px 16px 0 $red, 32px 16px 0 $red,
+      36px 16px 0 $red, 40px 16px 0 $red, 44px 16px 0 $blk,
+      //Row: 6
+      0px 20px 0 $blk,
+      4px 20px 0 $red, 8px 20px 0 $red, 12px 20px 0 $red, 16px 20px 0 $red,
+      20px 20px 0 $blk, 24px 20px 0 $blk, 28px 20px 0 $red, 32px 20px 0 $red,
+      36px 20px 0 $red, 40px 20px 0 $red, 44px 20px 0 $blk,
+      //Row: 7
+      0px 24px 0 $blk,
+      4px 24px 0 $blk, 8px 24px 0 $red, 12px 24px 0 $red, 16px 24px 0 $blk,
+      20px 24px 0 $wht, 24px 24px 0 $gry, 28px 24px 0 $blk, 32px 24px 0 $red,
+      36px 24px 0 $red, 40px 24px 0 $blk, 44px 24px 0 $blk,
+      //Row: 8
+      0px 28px 0 $blk,
+      4px 28px 0 $wht, 8px 28px 0 $blk, 12px 28px 0 $blk, 16px 28px 0 $blk,
+      20px 28px 0 $gry, 24px 28px 0 $gry, 28px 28px 0 $blk, 32px 28px 0 $blk,
+      36px 28px 0 $blk, 40px 28px 0 $gry, 44px 28px 0 $blk,
+      //Row: 9
+      4px 32px 0 $blk,
+      8px 32px 0 $wht, 12px 32px 0 $wht, 16px 32px 0 $wht, 20px 32px 0 $blk,
+      24px 32px 0 $blk, 28px 32px 0 $gry, 32px 32px 0 $gry, 36px 32px 0 $gry,
+      40px 32px 0 $blk,
+      //Row: 10
+      4px 36px 0 $blk,
+      8px 36px 0 $gry, 12px 36px 0 $wht, 16px 36px 0 $wht, 20px 36px 0 $wht,
+      24px 36px 0 $gry, 28px 36px 0 $gry, 32px 36px 0 $gry, 36px 36px 0 $gry,
+      40px 36px 0 $blk,
+      //Row: 11
+      8px 40px 0 $blk,
+      12px 40px 0 $blk, 16px 40px 0 $gry, 20px 40px 0 $gry, 24px 40px 0 $gry,
+      28px 40px 0 $gry, 32px 40px 0 $blk, 36px 40px 0 $blk,
+      //Row: 12
+      16px 44px 0 $blk,
+      20px 44px 0 $blk, 24px 44px 0 $blk, 28px 44px 0 $blk;
+  }
+  &#great {
+    animation-delay: 0.25s;
+    margin: -4px 0 0 54px;
+    box-shadow: 
+      //Row: 1
+      16px 0 0 $blk, 20px 0 0 $blk, 24px 0 0 $blk, 28px 0 0 $blk,
+      //Row: 2
+      8px 4px 0 $blk,
+      12px 4px 0 $blk, 16px 4px 0 $blu, 20px 4px 0 $blu, 24px 4px 0 $blu,
+      28px 4px 0 $blu, 32px 4px 0 $blk, 36px 4px 0 $blk,
+      //Row: 3
+      4px 8px 0 $blk,
+      8px 8px 0 $red, 12px 8px 0 $red, 16px 8px 0 $blu, 20px 8px 0 $blu,
+      24px 8px 0 $blu, 28px 8px 0 $blu, 32px 8px 0 $red, 36px 8px 0 $red,
+      40px 8px 0 $blk,
+      //Row: 4
+      4px 12px 0 $blk,
+      8px 12px 0 $red, 12px 12px 0 $red, 16px 12px 0 $red, 20px 12px 0 $blu,
+      24px 12px 0 $blu, 28px 12px 0 $red, 32px 12px 0 $red, 36px 12px 0 $red,
+      40px 12px 0 $blk,
+      //Row: 5
+      0px 16px 0 $blk,
+      4px 16px 0 $blu, 8px 16px 0 $blu, 12px 16px 0 $red, 16px 16px 0 $red,
+      20px 16px 0 $blu, 24px 16px 0 $blu, 28px 16px 0 $red, 32px 16px 0 $red,
+      36px 16px 0 $blu, 40px 16px 0 $blu, 44px 16px 0 $blk,
+      //Row: 6
+      0px 20px 0 $blk,
+      4px 20px 0 $blu, 8px 20px 0 $blu, 12px 20px 0 $blu, 16px 20px 0 $blu,
+      20px 20px 0 $blk, 24px 20px 0 $blk, 28px 20px 0 $blu, 32px 20px 0 $blu,
+      36px 20px 0 $blu, 40px 20px 0 $blu, 44px 20px 0 $blk,
+      //Row: 7
+      0px 24px 0 $blk,
+      4px 24px 0 $blk, 8px 24px 0 $blu, 12px 24px 0 $blu, 16px 24px 0 $blk,
+      20px 24px 0 $wht, 24px 24px 0 $gry, 28px 24px 0 $blk, 32px 24px 0 $blu,
+      36px 24px 0 $blu, 40px 24px 0 $blk, 44px 24px 0 $blk,
+      //Row: 8
+      0px 28px 0 $blk,
+      4px 28px 0 $wht, 8px 28px 0 $blk, 12px 28px 0 $blk, 16px 28px 0 $blk,
+      20px 28px 0 $gry, 24px 28px 0 $gry, 28px 28px 0 $blk, 32px 28px 0 $blk,
+      36px 28px 0 $blk, 40px 28px 0 $gry, 44px 28px 0 $blk,
+      //Row: 9
+      4px 32px 0 $blk,
+      8px 32px 0 $wht, 12px 32px 0 $wht, 16px 32px 0 $wht, 20px 32px 0 $blk,
+      24px 32px 0 $blk, 28px 32px 0 $gry, 32px 32px 0 $gry, 36px 32px 0 $gry,
+      40px 32px 0 $blk,
+      //Row: 10
+      4px 36px 0 $blk,
+      8px 36px 0 $gry, 12px 36px 0 $wht, 16px 36px 0 $wht, 20px 36px 0 $wht,
+      24px 36px 0 $gry, 28px 36px 0 $gry, 32px 36px 0 $gry, 36px 36px 0 $gry,
+      40px 36px 0 $blk,
+      //Row: 11
+      8px 40px 0 $blk,
+      12px 40px 0 $blk, 16px 40px 0 $gry, 20px 40px 0 $gry, 24px 40px 0 $gry,
+      28px 40px 0 $gry, 32px 40px 0 $blk, 36px 40px 0 $blk,
+      //Row: 12
+      16px 44px 0 $blk,
+      20px 44px 0 $blk, 24px 44px 0 $blk, 28px 44px 0 $blk;
+  }
+  &#ultra {
+    animation-delay: 0.5s;
+    margin: -4px 0 0 108px;
+    box-shadow: 
+      //Row: 1
+      16px 0 0 $blk, 20px 0 0 $blk, 24px 0 0 $blk, 28px 0 0 $blk,
+      //Row: 2
+      8px 4px 0 $blk,
+      12px 4px 0 $blk, 16px 4px 0 $ylw, 20px 4px 0 $ylw, 24px 4px 0 $ylw,
+      28px 4px 0 $ylw, 32px 4px 0 $blk, 36px 4px 0 $blk,
+      //Row: 3
+      4px 8px 0 $blk,
+      8px 8px 0 $ylw, 12px 8px 0 $ylw, 16px 8px 0 $ylw, 20px 8px 0 $ylw,
+      24px 8px 0 $ylw, 28px 8px 0 $ylw, 32px 8px 0 $ylw, 36px 8px 0 $ylw,
+      40px 8px 0 $blk,
+      //Row: 4
+      4px 12px 0 $blk,
+      8px 12px 0 $ylw, 12px 12px 0 $ylw, 16px 12px 0 $blk, 20px 12px 0 $blk,
+      24px 12px 0 $blk, 28px 12px 0 $blk, 32px 12px 0 $ylw, 36px 12px 0 $ylw,
+      40px 12px 0 $blk,
+      //Row: 5
+      0px 16px 0 $blk,
+      4px 16px 0 $blk, 8px 16px 0 $ylw, 12px 16px 0 $ylw, 16px 16px 0 $blk,
+      20px 16px 0 $blk, 24px 16px 0 $blk, 28px 16px 0 $blk, 32px 16px 0 $ylw,
+      36px 16px 0 $ylw, 40px 16px 0 $blk, 44px 16px 0 $blk,
+      //Row: 6
+      0px 20px 0 $blk,
+      4px 20px 0 $blk, 8px 20px 0 $blk, 12px 20px 0 $blk, 16px 20px 0 $blk,
+      20px 20px 0 $blk, 24px 20px 0 $blk, 28px 20px 0 $blk, 32px 20px 0 $blk,
+      36px 20px 0 $blk, 40px 20px 0 $blk, 44px 20px 0 $blk,
+      //Row: 7
+      0px 24px 0 $blk,
+      4px 24px 0 $blk, 8px 24px 0 $blk, 12px 24px 0 $blk, 16px 24px 0 $blk,
+      20px 24px 0 $wht, 24px 24px 0 $gry, 28px 24px 0 $blk, 32px 24px 0 $blk,
+      36px 24px 0 $blk, 40px 24px 0 $blk, 44px 24px 0 $blk,
+      //Row: 8
+      0px 28px 0 $blk,
+      4px 28px 0 $wht, 8px 28px 0 $blk, 12px 28px 0 $blk, 16px 28px 0 $blk,
+      20px 28px 0 $gry, 24px 28px 0 $gry, 28px 28px 0 $blk, 32px 28px 0 $blk,
+      36px 28px 0 $blk, 40px 28px 0 $gry, 44px 28px 0 $blk,
+      //Row: 9
+      4px 32px 0 $blk,
+      8px 32px 0 $wht, 12px 32px 0 $wht, 16px 32px 0 $wht, 20px 32px 0 $blk,
+      24px 32px 0 $blk, 28px 32px 0 $gry, 32px 32px 0 $gry, 36px 32px 0 $gry,
+      40px 32px 0 $blk,
+      //Row: 10
+      4px 36px 0 $blk,
+      8px 36px 0 $gry, 12px 36px 0 $wht, 16px 36px 0 $wht, 20px 36px 0 $wht,
+      24px 36px 0 $gry, 28px 36px 0 $gry, 32px 36px 0 $gry, 36px 36px 0 $gry,
+      40px 36px 0 $blk,
+      //Row: 11
+      8px 40px 0 $blk,
+      12px 40px 0 $blk, 16px 40px 0 $gry, 20px 40px 0 $gry, 24px 40px 0 $gry,
+      28px 40px 0 $gry, 32px 40px 0 $blk, 36px 40px 0 $blk,
+      //Row: 12
+      16px 44px 0 $blk,
+      20px 44px 0 $blk, 24px 44px 0 $blk, 28px 44px 0 $blk;
+  }
+  &#master {
+    animation-delay: 0.75s;
+    margin: -4px 0 0 162px;
+    box-shadow: 
+      //Row: 1
+      16px 0 0 $blk, 20px 0 0 $blk, 24px 0 0 $blk, 28px 0 0 $blk,
+      //Row: 2
+      8px 4px 0 $blk,
+      12px 4px 0 $blk, 16px 4px 0 $ppl, 20px 4px 0 $ppl, 24px 4px 0 $ppl,
+      28px 4px 0 $ppl, 32px 4px 0 $blk, 36px 4px 0 $blk,
+      //Row: 3
+      4px 8px 0 $blk,
+      8px 8px 0 $pnk, 12px 8px 0 $pnk, 16px 8px 0 $ppl, 20px 8px 0 $ppl,
+      24px 8px 0 $ppl, 28px 8px 0 $ppl, 32px 8px 0 $pnk, 36px 8px 0 $pnk,
+      40px 8px 0 $blk,
+      //Row: 4
+      4px 12px 0 $blk,
+      8px 12px 0 $pnk, 12px 12px 0 $wht, 16px 12px 0 $wht, 20px 12px 0 $ppl,
+      24px 12px 0 $ppl, 28px 12px 0 $wht, 32px 12px 0 $wht, 36px 12px 0 $pnk,
+      40px 12px 0 $blk,
+      //Row: 5
+      0px 16px 0 $blk,
+      4px 16px 0 $ppl, 8px 16px 0 $ppl, 12px 16px 0 $wht, 16px 16px 0 $ppl,
+      20px 16px 0 $wht, 24px 16px 0 $wht, 28px 16px 0 $ppl, 32px 16px 0 $wht,
+      36px 16px 0 $ppl, 40px 16px 0 $ppl, 44px 16px 0 $blk,
+      //Row: 6
+      0px 20px 0 $blk,
+      4px 20px 0 $ppl, 8px 20px 0 $ppl, 12px 20px 0 $ppl, 16px 20px 0 $ppl,
+      20px 20px 0 $blk, 24px 20px 0 $blk, 28px 20px 0 $ppl, 32px 20px 0 $ppl,
+      36px 20px 0 $ppl, 40px 20px 0 $ppl, 44px 20px 0 $blk,
+      //Row: 7
+      0px 24px 0 $blk,
+      4px 24px 0 $blk, 8px 24px 0 $ppl, 12px 24px 0 $ppl, 16px 24px 0 $blk,
+      20px 24px 0 $wht, 24px 24px 0 $gry, 28px 24px 0 $blk, 32px 24px 0 $ppl,
+      36px 24px 0 $ppl, 40px 24px 0 $blk, 44px 24px 0 $blk,
+      //Row: 8
+      0px 28px 0 $blk,
+      4px 28px 0 $wht, 8px 28px 0 $blk, 12px 28px 0 $blk, 16px 28px 0 $blk,
+      20px 28px 0 $gry, 24px 28px 0 $gry, 28px 28px 0 $blk, 32px 28px 0 $blk,
+      36px 28px 0 $blk, 40px 28px 0 $gry, 44px 28px 0 $blk,
+      //Row: 9
+      4px 32px 0 $blk,
+      8px 32px 0 $wht, 12px 32px 0 $wht, 16px 32px 0 $wht, 20px 32px 0 $blk,
+      24px 32px 0 $blk, 28px 32px 0 $gry, 32px 32px 0 $gry, 36px 32px 0 $gry,
+      40px 32px 0 $blk,
+      //Row: 10
+      4px 36px 0 $blk,
+      8px 36px 0 $gry, 12px 36px 0 $wht, 16px 36px 0 $wht, 20px 36px 0 $wht,
+      24px 36px 0 $gry, 28px 36px 0 $gry, 32px 36px 0 $gry, 36px 36px 0 $gry,
+      40px 36px 0 $blk,
+      //Row: 11
+      8px 40px 0 $blk,
+      12px 40px 0 $blk, 16px 40px 0 $gry, 20px 40px 0 $gry, 24px 40px 0 $gry,
+      28px 40px 0 $gry, 32px 40px 0 $blk, 36px 40px 0 $blk,
+      //Row: 12
+      16px 44px 0 $blk,
+      20px 44px 0 $blk, 24px 44px 0 $blk, 28px 44px 0 $blk;
+  }
+  &#safari {
+    animation-delay: 1s;
+    margin: -4px 0 0 216px;
+    box-shadow: 
+      //Row: 1
+      16px 0 0 $blk, 20px 0 0 $blk, 24px 0 0 $blk, 28px 0 0 $blk,
+      //Row: 2
+      8px 4px 0 $blk,
+      12px 4px 0 $blk, 16px 4px 0 $brw, 20px 4px 0 $brw, 24px 4px 0 $mos,
+      28px 4px 0 $grn, 32px 4px 0 $blk, 36px 4px 0 $blk,
+      //Row: 3
+      4px 8px 0 $blk,
+      8px 8px 0 $mos, 12px 8px 0 $mos, 16px 8px 0 $mos, 20px 8px 0 $brw,
+      24px 8px 0 $brw, 28px 8px 0 $grn, 32px 8px 0 $mos, 36px 8px 0 $brw,
+      40px 8px 0 $blk,
+      //Row: 4
+      4px 12px 0 $blk,
+      8px 12px 0 $brw, 12px 12px 0 $brw, 16px 12px 0 $brw, 20px 12px 0 $brw,
+      24px 12px 0 $brw, 28px 12px 0 $grn, 32px 12px 0 $mos, 36px 12px 0 $mos,
+      40px 12px 0 $blk,
+      //Row: 5
+      0px 16px 0 $blk,
+      4px 16px 0 $grn, 8px 16px 0 $mos, 12px 16px 0 $grn, 16px 16px 0 $grn,
+      20px 16px 0 $mos, 24px 16px 0 $mos, 28px 16px 0 $mos, 32px 16px 0 $grn,
+      36px 16px 0 $brw, 40px 16px 0 $brw, 44px 16px 0 $blk,
+      //Row: 6
+      0px 20px 0 $blk,
+      4px 20px 0 $grn, 8px 20px 0 $mos, 12px 20px 0 $grn, 16px 20px 0 $mos,
+      20px 20px 0 $blk, 24px 20px 0 $blk, 28px 20px 0 $mos, 32px 20px 0 $mos,
+      36px 20px 0 $grn, 40px 20px 0 $grn, 44px 20px 0 $blk,
+      //Row: 7
+      0px 24px 0 $blk,
+      4px 24px 0 $blk, 8px 24px 0 $mos, 12px 24px 0 $mos, 16px 24px 0 $blk,
+      20px 24px 0 $wht, 24px 24px 0 $gry, 28px 24px 0 $blk, 32px 24px 0 $brw,
+      36px 24px 0 $brw, 40px 24px 0 $blk, 44px 24px 0 $blk,
+      //Row: 8
+      0px 28px 0 $blk,
+      4px 28px 0 $wht, 8px 28px 0 $blk, 12px 28px 0 $blk, 16px 28px 0 $blk,
+      20px 28px 0 $gry, 24px 28px 0 $gry, 28px 28px 0 $blk, 32px 28px 0 $blk,
+      36px 28px 0 $blk, 40px 28px 0 $gry, 44px 28px 0 $blk,
+      //Row: 9
+      4px 32px 0 $blk,
+      8px 32px 0 $wht, 12px 32px 0 $wht, 16px 32px 0 $wht, 20px 32px 0 $blk,
+      24px 32px 0 $blk, 28px 32px 0 $gry, 32px 32px 0 $gry, 36px 32px 0 $gry,
+      40px 32px 0 $blk,
+      //Row: 10
+      4px 36px 0 $blk,
+      8px 36px 0 $gry, 12px 36px 0 $wht, 16px 36px 0 $wht, 20px 36px 0 $wht,
+      24px 36px 0 $gry, 28px 36px 0 $gry, 32px 36px 0 $gry, 36px 36px 0 $gry,
+      40px 36px 0 $blk,
+      //Row: 11
+      8px 40px 0 $blk,
+      12px 40px 0 $blk, 16px 40px 0 $gry, 20px 40px 0 $gry, 24px 40px 0 $gry,
+      28px 40px 0 $gry, 32px 40px 0 $blk, 36px 40px 0 $blk,
+      //Row: 12
+      16px 44px 0 $blk,
+      20px 44px 0 $blk, 24px 44px 0 $blk, 28px 44px 0 $blk;
+  }
+}
+
+//Search¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+#searchSection {
+  display: none;
+  //display: inline-block;
+  overflow: hidden;
+  height: 100%;
+  padding: 5px;
+}
+
+#searchFilterMenu { 
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 70%;
+  background: #eee;
+  padding: 0;
+}
+
+
+#charContainer {
+  width: 100%;
+  height: 60vh;
+  margin-top: 5px;
+  //display: none;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  background-color: beige;
+  cursor: pointer;
+}
+
+.charImage{
+  height: 80px;
+}
+.charId{
+  margin-top: -20px;
+}
+//Stats¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+#statsSection {
+  display: none;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+//Battle¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+#battleSection {
+  display: none;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+//MENU-------------------------------------------
+#menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: (1fr);
+  grid-gap: 10px;
+  background-color: #dd6060;
+  color: #fff;
+  padding: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.menuBtn {
+  background-color: #b84435;
+  height: 120%;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  &-text {
+    display: none;
+  }
+}
+
+.menuBtn:hover {
+  background-color: #fff;
+  color: #e20f07;
+  $pokeIconColor: 0;
+}
+
+#menuBtnTeamIcon {
+  height: 20px;
+  margin-right: 5px;
+  margin-top: -6px;
+  filter: brightness($pokeIconColor);
+}
+
+//MEDIAQUERY-------------------------------------
+@media screen and (min-width: 500px) {
+  .menuBtn {
+    &-text {
+      display: block;
+    }
+  }
+}

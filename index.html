@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeApi DLC54</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- <link rel="stylesheet" href="" /> -->
+    <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/57cd72aeef.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header id="header">
+      <!-- Titulo pagina y tipos de pokemon cubiertos-->
+      <h1 id="page-title">Poke Teamer</h1>
+      <!-- <p id="page-subtitle">Build your team</p> -->
+      <div id="headerTypesCovered">
+        <!-- Iconos con los elementos cubiertos por tu equipo -->
+      </div>
+    </header>
+
+    <div id="mainSection">
+      <div id="teamSection">
+        <!-- Seccion principal, equipo poikemones -->
+          <!-- <div id="poke6" class="pokeCardFilled">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="" class="charImage"/> 
+            <p>Pikachu</p>
+            <p>Electric</p>
+          </div> -->
+        <div id="poke1" class="pokeCard">+</div>
+        <div id="poke2" class="pokeCard">+</div>
+        <div id="poke3" class="pokeCard">+</div>
+        <div id="poke4" class="pokeCard">+</div>
+        <div id="poke5" class="pokeCard">+</div>
+        <div id="poke6" class="pokeCard">+</div>
+        
+      </div>
+
+      <div id="loader">
+        <div class="pokeball" id="normal"></div>
+        <div class="pokeball" id="great"></div>
+        <div class="pokeball" id="ultra"></div>
+        <div class="pokeball" id="master"></div>
+        <div class="pokeball" id="safari"></div>
+      </div>
+      <div id="searchSection">
+        <!-- Pokemones para seleccionar -->
+        <input type="text" id="searchInput" placeholder="Buscar personaje" />
+        <button id="searchFilterMenuBtn"><i class="fa-solid fa-filter"></i></button>
+        <fieldset id="searchFilterMenu">
+          <label for="typeChechbox">
+            Filtrar por tipo: <br />
+            <input type="checkbox" name="type" id="bug" />Bug
+            <input type="checkbox" name="type" id="dragon" />Dragon<br />
+            <input type="checkbox" name="type" id="electric" />Electric
+            <input type="checkbox" name="type" id="fighting" />Fighting<br />
+            <input type="checkbox" name="type" id="fire" />Fire
+            <input type="checkbox" name="type" id="flying" />Flying<br />
+            <input type="checkbox" name="type" id="ghost" />Ghost
+            <input type="checkbox" name="type" id="grass" />Grass<br />
+            <input type="checkbox" name="type" id="ground" />Ground
+            <input type="checkbox" name="type" id="ice" />Ice<br />
+            <input type="checkbox" name="type" id="normal" />Normal
+            <input type="checkbox" name="type" id="poison" />Poison<br />
+            <input type="checkbox" name="type" id="psychic" />Psychic
+            <input type="checkbox" name="type" id="rock" />Rock<br />
+            <input type="checkbox" name="type" id="water" />Water<br /><br />
+          </label>
+
+          <!-- ordenar segun tipo/nombre/id:
+          Ordenar por: <br />
+          <label for="">
+            <input type="radio" name="order" id="normal" checked="potatoe"/>
+            <i class="fa-solid fa-arrow-up"></i>
+            <input type="radio" name="order" id="inverted" />
+            <i class="fa-solid fa-arrow-down"></i>
+            <br />
+          </label>
+
+          <input type="radio" name="ac" id="" value="01" /> Nombre
+          <input type="radio" name="ac" id="" value="02" /> Id
+          <input type="radio" name="ac" id="" value="02" /> Tipo    -->
+          <br /><br />
+          <button id="searchGoBtn">Aplicar</button>
+          <button id="searchCleanBtn">Limpiar</button>
+        </fieldset>
+
+        <div id="charContainer">
+          <!-- div donde se mostraran los pokemones -->
+        </div>
+      </div>
+
+      <div id="statsSection">
+        <!-- Stats del equipo creado -->
+        <!--  -->
+        <img src="./image/pikonstruct.png" height="100px">
+        <p>Working on it</p>
+      </div>
+
+      <div id="battleSection">
+        <!--  -->
+        <img src="./image/pikonstruct.png" height="100px">
+        <p>Building the stadium</p>
+      </div>
+    </div>
+
+    <menu id="menu">
+      <!-- Menu secciones -->
+      <div id="menuBtnTeam" class="menuBtn">
+        <img
+          src="./image/pokeballIcon.png"
+          id="menuBtnTeamIcon"
+          alt="pokeballIcon"
+        />
+        <p class="menuBtn-text">Team</p>
+      </div>
+
+      <div id="menuBtnSearch" class="menuBtn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p class="menuBtn-text">Search</p>
+      </div>
+
+      <div id="menuBtnStats" class="menuBtn">
+        <i class="fa-solid fa-chart-simple"></i>
+        <p class="menuBtn-text">Stats</p>
+      </div>
+
+      <div id="menuBtnBattle" class="menuBtn">
+        <i class="fa-solid fa-explosion"></i>
+        <p class="menuBtn-text">Battle</p>
+      </div>
+    </menu>
+  </body>
+</html>
