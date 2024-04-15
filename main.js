@@ -40,7 +40,7 @@ const mapPokemon = results => {
 }
 
 //Se activan los botones del menu
-function menuButtons () {
+function menuButtons() {
   const teamSection$ = document.querySelector('#teamSection')
   const searchSection$ = document.querySelector('#searchSection')
   const statsSection$ = document.querySelector('#statsSection')
@@ -79,7 +79,7 @@ function menuButtons () {
 }
 
 //Se activa el boton para añadir pokemon -- simplemente vamos a pestaña search
-function teamSectionButtons () {
+function teamSectionButtons() {
   const teamSection$ = document.querySelector('#teamSection')
   const searchSection$ = document.querySelector('#searchSection')
   const statsSection$ = document.querySelector('#statsSection')
@@ -103,7 +103,7 @@ function teamSectionButtons () {
 }
 
 //Volver a pantalla team
-function goToTeamSection () {
+function goToTeamSection() {
   const teamSection$ = document.querySelector('#teamSection')
   const searchSection$ = document.querySelector('#searchSection')
   const statsSection$ = document.querySelector('#statsSection')
@@ -120,7 +120,7 @@ const drawContainer = characters => {
   let loader$ = document.querySelector('#loader')
   loader$.style.display = 'none'
 
-  console.log(characters)
+  console.log("draw characters: ", characters)
 
   let container$ = document.querySelector('#charContainer')
   container$.innerHTML = '' //Se vacía
@@ -142,7 +142,7 @@ const drawContainer = characters => {
             <div class="charRole">${type}</div>
           </div>
           `
-      container$.appendChild(pill$) //Se mete un .charContainer en #charContainer
+      container$.appendChild(pill$) //Se mete un .charPill en #charContainer
     }
   } else {
     let pill$ = document.createElement('div')
@@ -171,11 +171,14 @@ const drawContainer_input_filter_order = characters_ => {
 
   //Funcion para buscar en el array y pintarlo
   const searchCharacters = (characters_, inputValue_) => {
-    console.log(inputValue_)
-    let filteredCharacters = characters_.filter(characters_ => {
-      characters_.name.toLowerCase().includes(inputValue_) ||
-        characters_.id == inputValue_ ||
-        characters_.type.toLowerCase().includes(inputValue_)
+    console.log("input: ", inputValue_)
+    console.log("chars sinfiltrar: ", characters_)
+
+    let filteredCharacters = characters_.filter(char => {
+      return (
+        char.name.toLowerCase().includes(inputValue_) ||
+        char.id == inputValue_ ||
+        char.type.toLowerCase().includes(inputValue_))
     })
 
     /* NO FUNCA
@@ -235,7 +238,7 @@ function activeFilters () {
   return activeFiltersArray
 }*/
 
-function pickPokemon (characters_) {
+function pickPokemon(characters_) {
   const pokemones$ = document.querySelectorAll('.charPill')
   for (let pokemon of pokemones$) {
     pokemon.addEventListener('click', () => {
@@ -260,7 +263,7 @@ function pickPokemon (characters_) {
 }
 
 //Eliminar pokemon del team not funking
-function deletePokemon (characters_) {
+function deletePokemon(characters_) {
   const pokemones$ = document.querySelectorAll('.pokeCardFilled')
   for (let pokemon of pokemones$) {
     pokemon.addEventListener('click', () => {
@@ -282,7 +285,7 @@ function deletePokemon (characters_) {
   }
 }
 
-async function init () {
+async function init() {
   //1º Cargar los datos de la API
   const dataOrigin = await getData()
   //console.log('Devolucion del getData desde el init:', dataOrigin)
@@ -299,12 +302,13 @@ async function init () {
   //3º Pintamos los datos en el DOM - searchSection
   drawContainer(pokemonArrayMapped)
   //Se activa el click sobre los pokemones para añadirlos al equipo
-  pickPokemon(pokemonArrayMapped)
-  deletePokemon(pokemonArrayMapped)
+
+  //deletePokemon(pokemonArrayMapped)
   //activamos el menu filtros
   //activeFilters()
 
   drawContainer_input_filter_order(pokemonArrayMapped)
+  pickPokemon(pokemonArrayMapped)
 }
 
 init()
